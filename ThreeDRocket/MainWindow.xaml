@@ -1,0 +1,24 @@
+﻿<Window x:Class="ThreeDRocket.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:h="http://helix-toolkit.org/wpf"
+        xmlns:local="clr-namespace:ThreeDRocket"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid x:Name="gridName">
+
+        </Grid>
+        <Button x:Name="X" Content="Left=0" Click="Button_Click" Width="50" Height="50" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+           
+        </Button>
+        <Button x:Name="Y" Content="Right=0" Click="Button_Click_1" Width="50" Height="50" Margin="50,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            
+        </Button>
+        <Button x:Name="Z" Content="Z=0" Click="Button_Click_2" Width="50" Height="50" Margin="100,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            
+        </Button>
+    </Grid>
+    
+</Window>
