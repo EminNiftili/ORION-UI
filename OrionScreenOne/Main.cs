@@ -84,16 +84,25 @@ namespace OrionScreenOne
 
         _3DObject _3DObject = new _3DObject();
         Label labelA1 = new Label();
-        UniversalGauge universalGaugeA1 = new UniversalGauge(15, 500);
-        UniversalGauge universalGaugeA2 = new UniversalGauge(215, 500);
-        UniversalGauge universalGaugeA3 = new UniversalGauge(15, 650);
-        UniversalGauge universalGaugeA4 = new UniversalGauge(215, 650);
+        UniversalGauge universalGaugeA1 = new UniversalGauge(15, 500, 10000); // Rocket Altitude 
+        Label Altitude = new Label() { Text = "Altitude", Width = 150, BackColor = Color.Transparent };
+        UniversalGauge universalGaugeA2 = new UniversalGauge(215, 500, 10); //Rocket Pressure
+        Label Pressure = new Label() { Text = "Pressure", Width = 150, BackColor = Color.Transparent };
+        UniversalGauge universalGaugeA3 = new UniversalGauge(15, 650, 2); // Rocket Mach
+        Label Mach = new Label() { Text = "Mach", Width = 200, BackColor = Color.Transparent };
+        UniversalGauge universalGaugeA4 = new UniversalGauge(215, 650, 1000); // Rocket Speed
+        Label Speed = new Label() { Text = "Speed", Width = 200, BackColor = Color.Transparent };
+        UniversalGauge universalGaugeA5 = new UniversalGauge(215, 650, 100);
+        UniversalGauge universalGaugeA6 = new UniversalGauge(215, 650, 10);
+        UniversalGauge universalGaugeA7 = new UniversalGauge(215, 650, 10000);
+        UniversalGauge universalGaugeA8 = new UniversalGauge(215, 650, 100);
         TimeLine TimeLine = new TimeLine();
         public Main()
         {
             CreateTestData();
             InitializeComponent();
             CreateView();
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
         private void CreateView()
         {
@@ -102,7 +111,7 @@ namespace OrionScreenOne
             TimeLineOrion.BackColor = Color.Transparent;
             TimeLineOrion.Width = 900;
             TimeLineOrion.Height = 80;
-            TimeLineOrion.Location = new Point(350,700);
+            TimeLineOrion.Location = new Point(350,750);
 
             //Set Axis Infos
             Three3D.BackColor = Color.Transparent;
@@ -123,6 +132,19 @@ namespace OrionScreenOne
             this.Controls.Add(labelA1);
 
             // Added Telemetry Info
+            var fontFamily = new Font(FontFamily.GenericMonospace, 16, FontStyle.Regular);
+            Altitude.Location = new Point(60, 600);
+            Altitude.Font = fontFamily;
+            Pressure.Location = new Point(260, 600);
+            Pressure.Font = fontFamily;
+            Mach.Location = new Point(80, 750);
+            Mach.Font = fontFamily;
+            Speed.Location = new Point(280, 750);
+            Speed.Font = fontFamily;
+            this.Controls.Add(Altitude);
+            this.Controls.Add(Pressure);
+            this.Controls.Add(Mach);
+            this.Controls.Add(Speed);
             this.Controls.Add(universalGaugeA1);
             this.Controls.Add(universalGaugeA2);
             this.Controls.Add(universalGaugeA3);
@@ -133,7 +155,7 @@ namespace OrionScreenOne
         {
             Timer timer = new Timer();
             timer.Tick += Timer_Tick;
-            timer.Interval = 10;
+            timer.Interval = 100;
             timer.Start();
             //ThreeDObjects.Run();
 
@@ -146,10 +168,10 @@ namespace OrionScreenOne
             _3DObject.TranformY(1);
             _3DObject.TranformZ(1);
             Random random = new Random();
-            universalGaugeA1.Value = random.Next(20, 100);
-            universalGaugeA2.Value = random.Next(20, 100);
-            universalGaugeA3.Value = random.Next(20, 100);
-            universalGaugeA4.Value = random.Next(20, 100);
+            universalGaugeA1.Value = random.Next(20, 10000);
+            universalGaugeA2.Value = random.Next(0, 10)+Convert.ToDouble(random.NextDouble().ToString().Substring(0,4));
+            universalGaugeA3.Value = Convert.ToDouble(random.NextDouble().ToString().Substring(0, 4));
+            universalGaugeA4.Value = random.Next(20, 1000);
             forValue+=3;
         }
     }

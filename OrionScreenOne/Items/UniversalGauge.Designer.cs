@@ -58,7 +58,10 @@ namespace OrionScreenOne.Items
             };
             this.solidGauge1.InnerRadius = 80;
             this.solidGauge1.Base.GaugeBackground = new SolidColorBrush(Color.FromRgb(226, 228, 241));
-            this.solidGauge1.AnimationsSpeed = new TimeSpan(0,0,0,0,500);
+            this.solidGauge1.AnimationsSpeed = new TimeSpan(0, 0, 0, 0, 500);
+            // 
+            // label1
+            // 
             // 
             // UniversalGauge
             // 

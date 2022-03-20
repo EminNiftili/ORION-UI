@@ -31,10 +31,11 @@ namespace OrionScreenOne.Items
             this.Location = new Point(200, 200);
             
         }
-        public UniversalGauge(int left, int top)
+        public UniversalGauge(int left, int top, int maxValue)
         {
             InitializeComponent();
             this.Location = new Point(left, top);
+            this.solidGauge1.To = maxValue;
         }
 
     }
