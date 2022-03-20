@@ -25,6 +25,7 @@ namespace ThreeDRocket
         HelixViewport3D hVp3D;
         public MainWindow()
         {
+            //this.DataContext = new GaugeViewModel();
             InitializeComponent();
             Create3DViewPort();
         }

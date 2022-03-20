@@ -34,6 +34,7 @@ namespace OrionScreenOne
             this.button1 = new System.Windows.Forms.Button();
             this.Three3D = new System.Windows.Forms.Integration.ElementHost();
             this._3DObject1 = new ThreeDRocket._3DObject();
+            this.TimeLineOrion = new System.Windows.Forms.Integration.ElementHost();
             this.SuspendLayout();
             // 
             // button1
@@ -55,12 +56,22 @@ namespace OrionScreenOne
             this.Three3D.Text = "elementHost1";
             this.Three3D.Child = this._3DObject1;
             // 
+            // TimeLineOrion
+            // 
+            this.TimeLineOrion.Location = new System.Drawing.Point(540, 297);
+            this.TimeLineOrion.Name = "TimeLineOrion";
+            this.TimeLineOrion.Size = new System.Drawing.Size(200, 100);
+            this.TimeLineOrion.TabIndex = 2;
+            this.TimeLineOrion.Text = "elementHost1";
+            this.TimeLineOrion.Child = null;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1000, 500);
+            this.Controls.Add(this.TimeLineOrion);
             this.Controls.Add(this.Three3D);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -76,5 +87,6 @@ namespace OrionScreenOne
         private Button button1;
         private System.Windows.Forms.Integration.ElementHost Three3D;
         private ThreeDRocket._3DObject _3DObject1;
+        private System.Windows.Forms.Integration.ElementHost TimeLineOrion;
     }
 }

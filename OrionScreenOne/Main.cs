@@ -88,6 +88,7 @@ namespace OrionScreenOne
         UniversalGauge universalGaugeA2 = new UniversalGauge(215, 500);
         UniversalGauge universalGaugeA3 = new UniversalGauge(15, 650);
         UniversalGauge universalGaugeA4 = new UniversalGauge(215, 650);
+        TimeLine TimeLine = new TimeLine();
         public Main()
         {
             CreateTestData();
@@ -96,6 +97,13 @@ namespace OrionScreenOne
         }
         private void CreateView()
         {
+            //Set TimeLine
+            TimeLineOrion.Child = TimeLine;
+            TimeLineOrion.BackColor = Color.Transparent;
+            TimeLineOrion.Width = 900;
+            TimeLineOrion.Height = 80;
+            TimeLineOrion.Location = new Point(350,700);
+
             //Set Axis Infos
             Three3D.BackColor = Color.Transparent;
             Three3D.Location = new Point(50, 30);
@@ -125,7 +133,7 @@ namespace OrionScreenOne
         {
             Timer timer = new Timer();
             timer.Tick += Timer_Tick;
-            timer.Interval = 500;
+            timer.Interval = 10;
             timer.Start();
             //ThreeDObjects.Run();
 
@@ -133,60 +141,10 @@ namespace OrionScreenOne
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            switch(testValue[forValue].Item1)
-            {
-                case "x":
-                    {
-                        _3DObject.TranformX(testValue[forValue].Item2);
-                        break;
-                    }
-                case "y":
-                    {
-                        _3DObject.TranformY(testValue[forValue].Item2);
-                        break;
-                    }
-                case "z":
-                    {
-                        _3DObject.TranformZ(testValue[forValue].Item2);
-                        break;
-                    }
-            }
-            switch (testValue[forValue+1].Item1)
-            {
-                case "x":
-                    {
-                        _3DObject.TranformX(testValue[forValue+1].Item2);
-                        break;
-                    }
-                case "y":
-                    {
-                        _3DObject.TranformY(testValue[forValue+1].Item2);
-                        break;
-                    }
-                case "z":
-                    {
-                        _3DObject.TranformZ(testValue[forValue+1].Item2);
-                        break;
-                    }
-            }
-            switch (testValue[forValue+2].Item1)
-            {
-                case "x":
-                    {
-                        _3DObject.TranformX(testValue[forValue+2].Item2);
-                        break;
-                    }
-                case "y":
-                    {
-                        _3DObject.TranformY(testValue[forValue+2].Item2);
-                        break;
-                    }
-                case "z":
-                    {
-                        _3DObject.TranformZ(testValue[forValue+2].Item2);
-                        break;
-                    }
-            }
+            TimeLine.Timer_Elapsed(null, null);
+            _3DObject.TranformX(1);
+            _3DObject.TranformY(1);
+            _3DObject.TranformZ(1);
             Random random = new Random();
             universalGaugeA1.Value = random.Next(20, 100);
             universalGaugeA2.Value = random.Next(20, 100);
