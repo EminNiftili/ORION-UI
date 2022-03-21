@@ -88,7 +88,8 @@ namespace ThreeDRocket
             foreach (var item in hVp3D.Children)
             {
                 var matrix = item.Transform.Value;
-                matrix.Rotate(new Quaternion(axis, angle));
+                //matrix.Rotate(new Quaternion(axis, angle)); // Default My Rotate
+                matrix.RotateAtPrepend(new Quaternion(axis, angle), new Point3D(0, 0, 0));
                 item.Transform = new MatrixTransform3D(matrix);
             }
         }

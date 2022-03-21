@@ -52,13 +52,13 @@ namespace OrionScreenOne.Items
             {
                 GradientStops = new System.Windows.Media.GradientStopCollection()
                 {
-                    new System.Windows.Media.GradientStop(System.Windows.Media.Colors.Green,.5),
+                    new System.Windows.Media.GradientStop(System.Windows.Media.Colors.Chocolate,.5),
                     new System.Windows.Media.GradientStop(System.Windows.Media.Colors.Red,1),
                 }
             };
             this.solidGauge1.InnerRadius = 80;
             this.solidGauge1.Base.GaugeBackground = new SolidColorBrush(Color.FromRgb(226, 228, 241));
-            this.solidGauge1.AnimationsSpeed = new TimeSpan(0, 0, 0, 0, 500);
+            this.solidGauge1.AnimationsSpeed = new TimeSpan(0, 0, 0, 0, 200);
             // 
             // label1
             // 

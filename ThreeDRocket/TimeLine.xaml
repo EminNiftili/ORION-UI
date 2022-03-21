@@ -44,7 +44,7 @@
         <TextBlock HorizontalAlignment="Center" 
                    VerticalAlignment="Bottom" Margin="0" 
                    FontSize="40" 
-                   FontFamily="Agency FB" Foreground="#FF95D4FF" 
+                   FontFamily="Agency FB" Foreground="#FFF" 
                    Text="TeknoFest ORION">
             <TextBlock.Effect>
                 <DropShadowEffect BlurRadius="20" 

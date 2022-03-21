@@ -76,42 +76,42 @@ namespace ThreeDRocket
                 {
                     case 20:
                         {
-                            StartUp.Background = new SolidColorBrush(Color.FromRgb(0,255,0));
+                            StartUp.Background = new SolidColorBrush(Color.FromRgb(89,200,114));
                             break;
                         }
                     case 80:
                         {
-                            LiftOFF.Background = new SolidColorBrush(Color.FromRgb(0, 255, 0));
+                            LiftOFF.Background = new SolidColorBrush(Color.FromRgb(89, 200, 114));
                             break;
                         }
                     case 140:
                         {
-                            Anonymous.Background = new SolidColorBrush(Color.FromRgb(0, 255, 0));
+                            Anonymous.Background = new SolidColorBrush(Color.FromRgb(89, 200, 114));
                             break;
                         }
                     case 240:
                         {
-                            Apogee.Background = new SolidColorBrush(Color.FromRgb(0, 255, 0));
+                            Apogee.Background = new SolidColorBrush(Color.FromRgb(89, 200, 114));
                             break;
                         }
                     case 320:
                         {
-                            DragParachute.Background = new SolidColorBrush(Color.FromRgb(0, 255, 0));
+                            DragParachute.Background = new SolidColorBrush(Color.FromRgb(89, 200, 114));
                             break;
                         }
                     case 410:
                         {
-                            PayLoad.Background = new SolidColorBrush(Color.FromRgb(0, 255, 0));
+                            PayLoad.Background = new SolidColorBrush(Color.FromRgb(89, 200, 114));
                             break;
                         }
                     case 520:
                         {
-                            MainParachute.Background = new SolidColorBrush(Color.FromRgb(0, 255, 0));
+                            MainParachute.Background = new SolidColorBrush(Color.FromRgb(89, 200, 114));
                             break;
                         }
                     case 650:
                         {
-                            Landing.Background = new SolidColorBrush(Color.FromRgb(0, 255, 0));
+                            Landing.Background = new SolidColorBrush(Color.FromRgb(89, 200, 114));
                             break;
                         }
                 }
