@@ -28,6 +28,7 @@ namespace ThreeDRocket
         public static int i = 0;
         GaugeViewModel obj;
         TimeLineModel model;
+        DateTime? StartedTime;
         public TimeLine()
         {
             InitializeComponent();
@@ -72,6 +73,19 @@ namespace ThreeDRocket
         {
             try
             {
+                if(i==1)
+                {
+                    StartedTime = DateTime.Now;
+                }
+                if(!(StartedTime is null))
+                {
+                    var data = DateTime.Now - StartedTime;
+                    var msec = data.Value.Milliseconds;
+                    var sec = data.Value.Seconds;
+                    var min = data.Value.Minutes;
+                    string txt = myText.Text.Substring(0, 15);
+                    myText.Text = txt + "   " + min.ToString() + ":" + sec.ToString() + ":" + msec.ToString();
+                }
                 switch(i)
                 {
                     case 20:

@@ -41,7 +41,8 @@
 
         </Button>-->
         
-        <TextBlock HorizontalAlignment="Center" 
+        <TextBlock x:Name="myText"
+                   HorizontalAlignment="Center" 
                    VerticalAlignment="Bottom" Margin="0" 
                    FontSize="40" 
                    FontFamily="Agency FB" Foreground="#FFF" 

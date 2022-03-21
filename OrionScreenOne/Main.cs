@@ -24,16 +24,16 @@ namespace OrionScreenOne
         Label TMach = new Label() { Text = "Mach", Width = 200, BackColor = Color.Transparent };
         Label PAltitude = new Label() { Text = "Altitude", Width = 150, BackColor = Color.Transparent };
         Label PPressure = new Label() { Text = "Pressure", Width = 150, BackColor = Color.Transparent };
-        Label PSpeed = new Label() { Text = "Speed", Width = 200, BackColor = Color.Transparent };
-        Label PMach = new Label() { Text = "Mach", Width = 200, BackColor = Color.Transparent };
+        Label PMoisture = new Label() { Text = "Moisture", Width = 150, BackColor = Color.Transparent };
+        Label PTemperature = new Label() { Text = "Temperature", Width = 200, BackColor = Color.Transparent };
         UniversalGauge universalGaugeA1 = new UniversalGauge(15, 500, 10000); // Rocket Altitude 
         UniversalGauge universalGaugeA2 = new UniversalGauge(215, 500, 10); //Rocket Pressure
         UniversalGauge universalGaugeA3 = new UniversalGauge(15, 650, 2); // Rocket Mach
         UniversalGauge universalGaugeA4 = new UniversalGauge(215, 650, 1000); // Rocket Speed
         UniversalGauge universalGaugeA5 = new UniversalGauge(1150, 500, 10000); // Payload Altitude 
         UniversalGauge universalGaugeA6 = new UniversalGauge(1350, 500, 10); //Payload Pressure
-        UniversalGauge universalGaugeA7 = new UniversalGauge(1150, 650, 2); // Payload Mach
-        UniversalGauge universalGaugeA8 = new UniversalGauge(1350, 650, 1000); // Payload Speed
+        UniversalGauge universalGaugeA7 = new UniversalGauge(1150, 650, 100); // Payload Moisture
+        UniversalGauge universalGaugeA8 = new UniversalGauge(1350, 650, 100); // Payload Temperature
         TimeLine TimeLine = new TimeLine();
         public Main()
         {
@@ -86,18 +86,18 @@ namespace OrionScreenOne
             PAltitude.Font = fontFamily;
             PPressure.Location = new Point(1400, 600);
             PPressure.Font = fontFamily;
-            PMach.Location = new Point(1220, 750);
-            PMach.Font = fontFamily;
-            PSpeed.Location = new Point(1415, 750);
-            PSpeed.Font = fontFamily;
+            PMoisture.Location = new Point(1200, 750);
+            PMoisture.Font = fontFamily;
+            PTemperature.Location = new Point(1380, 750);
+            PTemperature.Font = fontFamily;
             PAltitude.ForeColor = Color.FromArgb(255, 255, 255, 255);
             PPressure.ForeColor = Color.FromArgb(255, 255, 255, 255);
-            PMach.ForeColor = Color.FromArgb(255, 255, 255, 255);
-            PSpeed.ForeColor = Color.FromArgb(255, 255, 255,255);
+            PMoisture.ForeColor = Color.FromArgb(255, 255, 255, 255);
+            PTemperature.ForeColor = Color.FromArgb(255, 255, 255,255);
             this.Controls.Add(PAltitude);
             this.Controls.Add(PPressure);
-            this.Controls.Add(PMach);
-            this.Controls.Add(PSpeed);
+            this.Controls.Add(PMoisture);
+            this.Controls.Add(PTemperature);
             this.Controls.Add(universalGaugeA5);
             this.Controls.Add(universalGaugeA6);
             this.Controls.Add(universalGaugeA7);
@@ -130,7 +130,7 @@ namespace OrionScreenOne
         {
             Timer timer = new Timer();
             timer.Tick += Timer_Tick;
-            timer.Interval = 100;
+            timer.Interval = 50;
             timer.Start();
             //ThreeDObjects.Run();
 
@@ -140,8 +140,8 @@ namespace OrionScreenOne
         {
             TimeLine.Timer_Elapsed(null, null);
             _3DObject.TranformX(1);
-            //_3DObject.TranformY(1);
-            //_3DObject.TranformZ(1);
+            _3DObject.TranformY(1);
+            _3DObject.TranformZ(1);
             Random random = new Random();
             universalGaugeA1.Value = random.Next(20, 10000);
             universalGaugeA2.Value = random.Next(0, 10)+Convert.ToDouble(random.NextDouble().ToString().Substring(0,4));
@@ -149,8 +149,8 @@ namespace OrionScreenOne
             universalGaugeA4.Value = random.Next(20, 1000);
             universalGaugeA5.Value = random.Next(20, 10000);
             universalGaugeA6.Value = random.Next(0, 10) + Convert.ToDouble(random.NextDouble().ToString().Substring(0, 4));
-            universalGaugeA7.Value = Convert.ToDouble(random.NextDouble().ToString().Substring(0, 4));
-            universalGaugeA8.Value = random.Next(20, 1000);
+            universalGaugeA7.Value = random.Next(20, 100);
+            universalGaugeA8.Value = random.Next(20, 100);
         }
     }
 }
